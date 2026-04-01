@@ -1,0 +1,50 @@
+{
+  "id": "org.bioe234.function.seq.find_motif.v1",
+  "name": "DNA Motif Finder",
+  "description": "Find all starting positions of a short DNA motif within a larger sequence.",
+  "type": "function",
+  "keywords": ["DNA", "motif", "pattern search", "sequence analysis"],
+  "date_created": null,
+  "date_last_modified": null,
+
+  "inputs": [
+    {
+      "name": "seq",
+      "type": "string",
+      "description": "DNA sequence to search. Accepts a resource name (e.g. 'pBR322') or a raw sequence string."
+    },
+    {
+      "name": "motif",
+      "type": "string",
+      "description": "Short DNA pattern to search for (e.g. 'GAATTC')."
+    }
+  ],
+
+  "outputs": [
+    {
+      "type": "array",
+      "description": "List of 1-based positions where the motif starts. Empty list if not found."
+    }
+  ],
+
+  "examples": [
+    {
+      "input":  { "seq": "AATGCAATG", "motif": "AATG" },
+      "output": { "result": [1, 6] }
+    },
+    {
+      "input":  { "seq": "ATGCATGC", "motif": "TTT" },
+      "output": { "result": [] }
+    }
+  ],
+
+  "execution_details": {
+    "language": "Python",
+    "source": "modules/dna_analysis/tools/find_motif.py",
+    "initialization": "initiate",
+    "execution": "run",
+    "disposal": null,
+    "mcp_name": "dna_find_motif",
+    "seq_params": ["seq"]
+  }
+}

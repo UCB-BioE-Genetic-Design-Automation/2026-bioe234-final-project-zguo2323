@@ -1,0 +1,45 @@
+{
+  "id": "org.bioe234.function.seq.sequence_length.v1",
+  "name": "DNA Sequence Length",
+  "description": "Return the number of bases in a DNA sequence.",
+  "type": "function",
+  "keywords": ["DNA", "sequence length", "base pairs", "sequence analysis"],
+  "date_created": null,
+  "date_last_modified": null,
+
+  "inputs": [
+    {
+      "name": "seq",
+      "type": "string",
+      "description": "DNA sequence. Accepts a resource name (e.g. 'pBR322') or a raw sequence string."
+    }
+  ],
+
+  "outputs": [
+    {
+      "type": "integer",
+      "description": "Length of the sequence in base pairs."
+    }
+  ],
+
+  "examples": [
+    {
+      "input":  { "seq": "ATGC" },
+      "output": { "result": 4 }
+    },
+    {
+      "input":  { "seq": "ATGCATGCATGC" },
+      "output": { "result": 12 }
+    }
+  ],
+
+  "execution_details": {
+    "language": "Python",
+    "source": "modules/dna_analysis/tools/sequence_length.py",
+    "initialization": "initiate",
+    "execution": "run",
+    "disposal": null,
+    "mcp_name": "dna_sequence_length",
+    "seq_params": ["seq"]
+  }
+}

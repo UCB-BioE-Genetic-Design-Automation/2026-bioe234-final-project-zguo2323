@@ -1,0 +1,45 @@
+{
+  "id": "org.bioe234.function.seq.nucleotide_frequency.v1",
+  "name": "DNA Nucleotide Frequency",
+  "description": "Count the occurrences of each nucleotide (A, T, G, C) in a DNA sequence.",
+  "type": "function",
+  "keywords": ["DNA", "nucleotide", "frequency", "composition", "sequence analysis"],
+  "date_created": null,
+  "date_last_modified": null,
+
+  "inputs": [
+    {
+      "name": "seq",
+      "type": "string",
+      "description": "DNA sequence. Accepts a resource name (e.g. 'pBR322') or a raw sequence string."
+    }
+  ],
+
+  "outputs": [
+    {
+      "type": "object",
+      "description": "Dictionary with keys 'A', 'T', 'G', 'C' mapping to their integer counts."
+    }
+  ],
+
+  "examples": [
+    {
+      "input":  { "seq": "ATGC" },
+      "output": { "result": {"A": 1, "T": 1, "G": 1, "C": 1} }
+    },
+    {
+      "input":  { "seq": "AAAA" },
+      "output": { "result": {"A": 4, "T": 0, "G": 0, "C": 0} }
+    }
+  ],
+
+  "execution_details": {
+    "language": "Python",
+    "source": "modules/dna_analysis/tools/nucleotide_frequency.py",
+    "initialization": "initiate",
+    "execution": "run",
+    "disposal": null,
+    "mcp_name": "dna_nucleotide_frequency",
+    "seq_params": ["seq"]
+  }
+}

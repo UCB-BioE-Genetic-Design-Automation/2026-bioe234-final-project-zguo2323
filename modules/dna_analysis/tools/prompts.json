@@ -1,0 +1,50 @@
+[
+  {
+    "prompt": "What is the GC content of ATGCATGC?",
+    "expected_tool": "dna_gc_content",
+    "expected_args": { "seq": "ATGCATGC" },
+    "notes": "Basic raw sequence input."
+  },
+  {
+    "prompt": "What fraction of pBR322 is GC?",
+    "expected_tool": "dna_gc_content",
+    "expected_args": { "seq": "pBR322" },
+    "notes": "Resource name input."
+  },
+  {
+    "prompt": "Find all positions of GAATTC in ATGAATTCGATGAATTC.",
+    "expected_tool": "dna_find_motif",
+    "expected_args": { "seq": "ATGAATTCGATGAATTC", "motif": "GAATTC" },
+    "notes": "Motif search with two expected hits."
+  },
+  {
+    "prompt": "Where does the motif ATG appear in pBR322?",
+    "expected_tool": "dna_find_motif",
+    "expected_args": { "seq": "pBR322", "motif": "ATG" },
+    "notes": "Motif search on a named resource."
+  },
+  {
+    "prompt": "How long is the sequence ATGCATGCATGC?",
+    "expected_tool": "dna_sequence_length",
+    "expected_args": { "seq": "ATGCATGCATGC" },
+    "notes": "Sequence length of a raw string."
+  },
+  {
+    "prompt": "How many base pairs does pBR322 have?",
+    "expected_tool": "dna_sequence_length",
+    "expected_args": { "seq": "pBR322" },
+    "notes": "Sequence length using a resource name."
+  },
+  {
+    "prompt": "Count the nucleotides in AAATTTGGGCCC.",
+    "expected_tool": "dna_nucleotide_frequency",
+    "expected_args": { "seq": "aaatttgggccc" },
+    "notes": "Nucleotide frequency of a raw sequence."
+  },
+  {
+    "prompt": "What is the nucleotide composition of pBR322?",
+    "expected_tool": "dna_nucleotide_frequency",
+    "expected_args": { "seq": "pBR322" },
+    "notes": "Nucleotide frequency using a resource name."
+  }
+]
